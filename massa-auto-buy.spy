@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+#################
+# Ver = 0.0.1
+# VAR
+passwd = 'Per08399'
+Address = 0
+Fee = 0
+
+import os
+text = []
+balance = 0
+RollCount = 0
+#################
+
+wal_i = `cd /root/massa/massa-client && ./massa-client -p {passwd}  wallet_info
+wal_i = str(wal_i)
+
+text = wal_i.split()
+balance = text[17]
+index_ravno = text[17].find('.')
+balance = int(balance[6:index_ravno]) # Баланс с которым можно работать
+Address = text[13]
+if balance >= 100:
+    #print('необходимо купить ролл')
+    RollCount = balance // 100
+    print(RollCount)
+    `cd /root/massa/massa-client && ./massa-client -p {passwd} buy_rolls {Address} {RollCount} {Fee}
+    print(f'Куплено {RollCount} роллов')
+else:
+    print('купить ролл не надо')
+
+# print(text[13])
