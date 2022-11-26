@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+#################
+# Ver = 0.0.1
+# Запуск через cron - */10 * * * * /usr/local/bin/shellpy /root/name.spy
+# VAR
+passwd = ''
+Address = 'A12LgzXf688kuVDDubA1V9d6gyLqZdDx39of4WBmaGsHQBPwj7jE' # Монетки сюда будут приходить
+text = []
+balance = 0
+#################
+#send_transaction A12KUu3CHtKbUxaHonHZwVb23vvC8tafyHGHfdgyM5qXLv8icbaZ A12LgzXf688kuVDDubA1V9d6gyLqZdDx39of4WBmaGsHQBPwj7jE 0.1 0
+
+wal_i = `cd /root/massa/massa-client && ./massa-client -p {passwd}  wallet_info
+wal_i = str(wal_i)
+text = wal_i.split()
+balance = text[17]
+index_ravno = text[17].find('.')
+balance = int(balance[6:index_ravno]) # Баланс с которым можно работать
+Address = text[13]
+if balance >= 0.01:
+    `cd /root/massa/massa-client && ./massa-client -p {passwd} send_transaction A12KUu3CHtKbUxaHonHZwVb23vvC8tafyHGHfdgyM5qXLv8icbaZ A12LgzXf688kuVDDubA1V9d6gyLqZdDx39of4WBmaGsHQBPwj7jE 0.1 0
+    print('Отправлено 0.01 MASS')
+else:
+    print('Покупатиь не надо')
+
+
