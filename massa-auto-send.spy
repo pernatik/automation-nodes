@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #################
-# Ver = 0.0.1
+# Ver = 0.0.2
 # Запуск через cron - */10 * * * * /usr/local/bin/shellpy /root/name.spy
 # VAR
 passwd = ''
