@@ -10,3 +10,9 @@ pip install shellpy
 ```
 */5 * * * * /usr/local/bin/shellpy /root/xxx.spy
 ```
+
+Решение проблемы <code>/usr/bin/env: ‘python’: No such file or directory</code>
+
+```
+apt install python-is-python3
+```
