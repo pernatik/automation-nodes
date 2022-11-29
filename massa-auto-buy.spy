@@ -5,7 +5,7 @@
 # VAR
 #
 # Запуск через cron - */5 * * * * /usr/local/bin/shellpy /root/name.spy
-passwd = 'Per08399'
+passwd = ''
 Address = 0
 Fee = 0
 
