@@ -1,0 +1,12 @@
+[Unit]
+Description=damominer
+
+[Service]
+User=root
+ExecStart=/home/user/damo_last/damominer --address aleo1x86v7l78hdlrjhg6r5j2v9cky7eks9cuhacqjukj74mssjfv$
+StandardOutput=file:/home/user/damo_last/aleo.log
+StandardError=file:/home/user/damo_last/aleo.log
+SuccessExitStatus=1
+
+[Install]
+WantedBy=multi-user.target
