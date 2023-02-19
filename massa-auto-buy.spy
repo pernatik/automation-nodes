@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-################# Update for massa_19.1
-# Ver = 0.0.2
+#################
+# Ver = 0.0.1
 # VAR
-passwd = 'Per08399'
+passwd = ''
 Address = 0
 Fee = 0
 
@@ -18,7 +18,7 @@ wal_i = str(wal_i)
 text = wal_i.split()
 balance = text[5]
 index_ravno = text[5].find('=')
-index_zpt = text[5].find(',')
+index_zpt = text[5].find('.')
 balance = int(balance[index_ravno+1:index_zpt]) # Баланс с которым можно работать
 Address = text[1]
 if balance >= 100:
