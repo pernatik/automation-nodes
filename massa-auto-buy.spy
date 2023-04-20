@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 #################
+<<<<<<< HEAD
 # Ver = 0.0.2 works on 21.0.x massa
+=======
+# Ver = 0.0.1
+>>>>>>> 6e4aa28edd543591279c28394bb4b7160b2ef591
 # VAR
 passwd = ''
 Address = 0
@@ -16,10 +20,16 @@ wal_i = `cd /root/massa/massa-client && ./massa-client -p {passwd}  wallet_info
 wal_i = str(wal_i)
 
 text = wal_i.split()
+<<<<<<< HEAD
 print(text)
 balance = text[6]
 index_ravno = text[6].find('=')
 index_zpt = text[6].find('.')
+=======
+balance = text[5]
+index_ravno = text[5].find('=')
+index_zpt = text[5].find('.')
+>>>>>>> 6e4aa28edd543591279c28394bb4b7160b2ef591
 balance = int(balance[index_ravno+1:index_zpt]) # Баланс с которым можно работать
 Address = text[1]
 if balance >= 100:
