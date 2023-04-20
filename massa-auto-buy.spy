@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 #################
-# 
-# Ver = 0.0.2
+# Ver = 0.0.2 works on 21.0.x massa
 # VAR
-#
-# Запуск через cron - */5 * * * * /usr/local/bin/shellpy /root/name.spy
 passwd = ''
 Address = 0
 Fee = 0
@@ -19,10 +16,12 @@ wal_i = `cd /root/massa/massa-client && ./massa-client -p {passwd}  wallet_info
 wal_i = str(wal_i)
 
 text = wal_i.split()
-balance = text[17]
-index_ravno = text[17].find('.')
-balance = int(balance[6:index_ravno]) # Баланс с которым можно работать
-Address = text[13]
+print(text)
+balance = text[6]
+index_ravno = text[6].find('=')
+index_zpt = text[6].find('.')
+balance = int(balance[index_ravno+1:index_zpt]) # Баланс с которым можно работать
+Address = text[1]
 if balance >= 100:
     #print('необходимо купить ролл')
     RollCount = balance // 100
@@ -30,6 +29,10 @@ if balance >= 100:
     `cd /root/massa/massa-client && ./massa-client -p {passwd} buy_rolls {Address} {RollCount} {Fee}
     print(f'Куплено {RollCount} роллов')
 else:
-    print('покупать ролл не надо')
+    print('купить ролл не надо')
+
+# print(text[5])
+# print(index_ravno)
+# print(balance)
 
 
