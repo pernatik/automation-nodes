@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 #################
-# Ver = 0.0.2 works on 21.0.x massa
+# Ver = 0.0.3 works on 2.2 mainnet massa
 # VAR
 passwd = ''
 Address = 0
-Fee = 0
+Fee = 0.01
 
 import os
 text = []
