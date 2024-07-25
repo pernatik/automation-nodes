@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 #################
-# Ver = 0.0.3 works on 2.2 mainnet massa
+# Ver = 0.0.4 works on 2.2 main massa
+
+# Modules
+import os
+
 # VAR
-passwd = ''
+passwd = os.getenv("MASSA_PASSWD")
 Address = 0
 Fee = 0.01
-
-import os
 text = []
 balance = 0
 RollCount = 0
@@ -33,4 +35,4 @@ else:
 
 # print(text[5])
 # print(index_ravno)
-# print(balance)
+# print(balance)x
